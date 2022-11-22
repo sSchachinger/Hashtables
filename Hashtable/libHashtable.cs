@@ -1,4 +1,5 @@
-﻿using libLinkedList;
+﻿using libArrayList;
+using libLinkedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Hashtable
 
     public class libHashtable<K, V> : IlibHashtable<K, V>
     {
-        private int m = 2;
+        private int m = 100000;
         private int maxLengthLL;
 
         libArrayList.IArrayList<ILinkedList<Tuple<K, V>>> arrayList { get; set; }
@@ -135,6 +136,48 @@ namespace Hashtable
                 }
             }
             return false;
+        }
+        /// <summary>
+        /// Check if Hashtable Contains specific value
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool Contains(Tuple<K, V> tuple)
+        {
+            int idx = getIndex(tuple.Item1);
+            linkedList = arrayList[idx];
+
+            if (linkedList == null)
+            {
+                Console.WriteLine("Not there");
+                return default;
+            }
+            for (int j = 0; j < linkedList.length; j++)
+            {
+                if (tuple.Item1.Equals(linkedList.FindbyIndex(j).Item1) && tuple.Item2.Equals(linkedList.FindbyIndex(j).Item2))
+                    return true;
+            }
+
+            Console.WriteLine("Keinen Wert gefunden.");
+            return false;
+
+
+
+
+            //for (int i = 0; i < m - 1; i++)
+            //{
+            //    if (arrayList[i] == null)
+            //        continue;
+            //    linkedList = arrayList[i];
+
+            //    for (int j = 0; j < linkedList.length; j++)
+            //    {
+            //        if (tuple.Item1.Equals(linkedList.FindbyIndex(j).Item1) && tuple.Item2.Equals(linkedList.FindbyIndex(j).Item2))
+            //            return true;
+            //    }
+            //}
+            //Console.WriteLine("Keinen Wert gefunden.");
+            //return false;
         }
     }
 }

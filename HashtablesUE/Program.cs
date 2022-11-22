@@ -34,17 +34,33 @@ namespace Hashtable
             Console.WriteLine($"get-Example for right: key: sechster  value:" + Hashtable.get("sechster"));
             Hashtable.remove("asd");
             Console.WriteLine(Hashtable.Alpha.ToString());
+
+            Tuple<string, string> pair = new Tuple<string, string>("dritter", "der");
+            Console.WriteLine(Hashtable.Contains(pair));
+            pair = new Tuple<string, string>("dritter", "deie");
+            Console.WriteLine(Hashtable.Contains(pair));
+
+
+
+
+
+
             Console.WriteLine("Nächste Aufgabe Enter:");
             Console.ReadLine();
-            Console.Clear();
 
-            Console.WriteLine("Aufgabe 2");
+
+
+
+
             //Aufgabe 2:
+            Console.Clear();
+            Console.WriteLine("Aufgabe 2");
+
 
             Person p1 = new Person("Albert", "Zuhause", 54);
             Person p2 = new Person("Bastian", "Deutschland", 41);
             Person p3 = new Person("Bastian", "Deutschland", 41);
-        
+
             p3.GetHashCode();
 
             Console.WriteLine("Person 1 entspricht Person 2:" + p3.Equals(p1));
