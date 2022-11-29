@@ -160,24 +160,6 @@ namespace Hashtable
 
             Console.WriteLine("Keinen Wert gefunden.");
             return false;
-
-
-
-
-            //for (int i = 0; i < m - 1; i++)
-            //{
-            //    if (arrayList[i] == null)
-            //        continue;
-            //    linkedList = arrayList[i];
-
-            //    for (int j = 0; j < linkedList.length; j++)
-            //    {
-            //        if (tuple.Item1.Equals(linkedList.FindbyIndex(j).Item1) && tuple.Item2.Equals(linkedList.FindbyIndex(j).Item2))
-            //            return true;
-            //    }
-            //}
-            //Console.WriteLine("Keinen Wert gefunden.");
-            //return false;
         }
     }
 }
